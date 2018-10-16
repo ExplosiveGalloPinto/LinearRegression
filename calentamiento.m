@@ -3,7 +3,7 @@ function A = warmUpExercise()
 
 A = [];
 % ============= SU CÓDIGO ==============
-
+A = eye(5) 
 
 
 
