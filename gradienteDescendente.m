@@ -7,23 +7,17 @@ J_history = zeros(num_iters, 1);
 
 for iter = 1:num_iters
 
-    % ====================== SU CÓDIGO ======================
-    % Instrucciones: Ejecute actualización de parámetros
-    %
-    % Nota: Para debuggear podría ir imprimiendo el costo, con los parámetros encontrados en cada iteración
-    %
+% ====================== SU CÓDIGO ======================
+% Instrucciones: Ejecute actualización de parámetros
+%
+% Nota: Para debuggear podría ir imprimiendo el costo, con los parámetros encontrados en cada iteración
+%
+theta = theta - (alpha .* (X * theta - y)'*X ./m)';
+% ============================================================
 
-
-
-
-
-
-
-    % ============================================================
-
-    % Guardar el costo J de cada iteración
-    % -esto no es necesario, pero lo usaremos para graficar más adelante-
-    J_history(iter) = costo(X, y, theta);
+% Guardar el costo J de cada iteración
+% -esto no es necesario, pero lo usaremos para graficar más adelante-
+J_history(iter) = costo(X, y, theta);
 
 end
 
