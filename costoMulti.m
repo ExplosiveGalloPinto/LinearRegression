@@ -1,5 +1,6 @@
 function J = costoMulti(X, y, theta)
 %Costo con múltiples variables
+%Calcula el costo en base a theta como parametro para la regresion lineal
 
 % inicializar valores
 m = length(y); 

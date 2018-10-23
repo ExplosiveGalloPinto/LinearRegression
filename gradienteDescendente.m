@@ -12,6 +12,7 @@ for iter = 1:num_iters
 %
 % Nota: Para debuggear podría ir imprimiendo el costo, con los parámetros encontrados en cada iteración
 %
+% Calculo de theta vectorizada
 theta = theta - (alpha .* (X * theta - y)'*X ./m)';
 % ============================================================
 

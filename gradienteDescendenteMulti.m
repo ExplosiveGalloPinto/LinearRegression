@@ -1,5 +1,5 @@
 function [theta, J_history] = gradienteDescendenteMulti(X, y, theta, alpha, num_iters)
-
+%Se encarga de calcular theta tomando n "pasos" con el porcentaje de aprendizaje alpha
 
 
 m = length(y); 
