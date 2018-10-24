@@ -6,6 +6,7 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 X_norm = X;
 mu = zeros(1, size(X, 2));
 sigma = zeros(1, size(X, 2));
+maxValues = zeros(1, size(X, 2));
 
 % ====================== SU CÓDIGO ======================
 % Instrucciones: para cada dimensión calcular la media
@@ -15,11 +16,13 @@ sigma = zeros(1, size(X, 2));
 %
 %
 % Nota: octave tiene la funciones mean y std que le pueden ser útiles
-%       
-mn = mean(X);
-sd = std(X);
-X_norm = bsxfun(@minus,X_norm,mn);
-X_norm = bsxfun(@rdivide,X_norm,sd);
+%   
+mu = mean(X);
+sigma = std(X);    
+for iter = 1:size(X, 2)
+maxValues(iter) = max(max(X(:,iter)));
+end
+X_norm = bsxfun(@rdivide,X_norm,maxValues);
 
 % ============================================================
 

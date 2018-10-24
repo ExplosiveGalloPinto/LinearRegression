@@ -20,6 +20,8 @@ pause;
 % 
 fprintf('Normalizing Features ...\n');
 
+max1 = (max(max(X(:,1))));
+max2 = (max(max(X(:,2))));
 [X mu sigma] = featureNormalize(X);
 
 % agregar columna
@@ -32,7 +34,7 @@ X = [ones(m, 1) X];
 fprintf('Corriendo gradient descent ...\n');
 
 % elija un alpha
-alpha = 0.01;
+alpha = 1;
 num_iters = 400;
 
 % theta inicial y correr gradiente descendente
@@ -53,7 +55,7 @@ fprintf('\n');
 % Estimar el precio de una casa de 1650 pies cuadrados y 3 cuartos
 % ====================== SU CÓDIGO ======================
 % recordar que nuestros datos están normalizados
-price = 0; % hay que cambiar esto
+price = theta(1) + theta(2)*(1650/max1) + theta(3)*(3/max2);
 
 
 % ============================================================
@@ -89,7 +91,7 @@ fprintf('\n');
 
 % Estimar el precio de una casa de 1650 pies cuadrados y 3 cuartos
 % ====================== SU CÓDIGO ======================
-price = 0; % cambiar esto
+price = theta(1) + theta(2)*1650 + theta(3)*3;
 
 
 % ============================================================
