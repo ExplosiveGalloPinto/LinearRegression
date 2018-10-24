@@ -9,6 +9,7 @@ m = length(y); % cantidad de examples
 J = 0;
 
 % ====================== SU CÓDIGO ======================
+%Calcula el costo en base a theta como parametro para la regresion lineal
 J = sum((X * theta - y).^2)/(2*length(X));
 
 % =========================================================================

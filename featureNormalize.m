@@ -16,12 +16,23 @@ maxValues = zeros(1, size(X, 2));
 %
 %
 % Nota: octave tiene la funciones mean y std que le pueden ser Ãºtiles
-%   
+%
+
+
+%mean calcula el promedio de los elementos de un Vector       
 mu = mean(X);
-sigma = std(X);    
+
+%std calcula la desviación estandar de los elementos de un vector
+sigma = std(X);
+
+%obtenemos los valores maximos de cada caracteristica para luego dividirlo con los datos respectivos
 for iter = 1:size(X, 2)
 maxValues(iter) = max(max(X(:,iter)));
 end
+
+%bsxfun  aplica la operación binaria a los elementos 
+%la operacion es especificada por el mando de función fun a los arrays A y B.
+%en este caso divide
 X_norm = bsxfun(@rdivide,X_norm,maxValues);
 
 % ============================================================
